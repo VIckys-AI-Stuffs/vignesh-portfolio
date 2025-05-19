@@ -53,13 +53,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom portfolio colors
+				// Custom portfolio colors for dark theme
 				portfolio: {
-					primary: "#1E293B", // Dark blue
-					secondary: "#0EA5E9", // Bright blue accent
-					light: "#F8FAFC", // Light background
-					dark: "#0F172A", // Very dark blue
-					muted: "#64748B" // Muted text color
+					primary: "#E2E8F0", // Light text for dark bg
+					secondary: "#0EA5E9", // Bright blue accent (keeping this)
+					light: "#0F172A", // Now dark (reversed)
+					dark: "#F8FAFC", // Now light (reversed)
+					muted: "#94A3B8" // Slightly lighter muted text for dark bg
 				}
 			},
 			borderRadius: {

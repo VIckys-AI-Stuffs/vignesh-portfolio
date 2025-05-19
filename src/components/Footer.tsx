@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   const year = new Date().getFullYear();
   
   return (
-    <footer className="relative bg-gradient-to-t from-portfolio-primary to-portfolio-primary/95 text-white py-10 overflow-hidden">
+    <footer className="relative bg-gradient-to-t from-black to-gray-900/95 text-white py-10 overflow-hidden">
       {/* Tech pattern background */}
       <div className="absolute inset-0 tech-pattern opacity-10"></div>
       
