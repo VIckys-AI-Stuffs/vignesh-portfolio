@@ -39,7 +39,13 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section id="skills" className="bg-gray-50">
+    <section id="skills" className="bg-portfolio-dark relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-hero-pattern opacity-10"></div>
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full bg-portfolio-secondary/5 blur-3xl"></div>
+      </div>
+      
       <div className="section-container">
         <h2 className="section-title">Skills & Expertise</h2>
         
@@ -47,9 +53,9 @@ const Skills: React.FC = () => {
           {skillCategories.map((category, index) => (
             <div 
               key={index} 
-              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              className="glass-card p-6 rounded-lg hover:border-portfolio-secondary/30 transition-all duration-300"
             >
-              <h3 className="text-xl font-medium mb-4 text-portfolio-primary">
+              <h3 className="text-xl font-medium mb-4 text-portfolio-light">
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-2">

@@ -70,7 +70,12 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="bg-white">
+    <section id="experience" className="bg-portfolio-primary relative">
+      {/* Background elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-portfolio-accent/5 blur-3xl rounded-full"></div>
+      </div>
+      
       <div className="section-container">
         <h2 className="section-title">Work Experience</h2>
         
@@ -78,13 +83,13 @@ const Experience: React.FC = () => {
           {jobs.map((job, index) => (
             <div key={index} className="experience-item">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                <h3 className="text-xl font-medium text-portfolio-primary">{job.title}</h3>
+                <h3 className="text-xl font-medium text-portfolio-light">{job.title}</h3>
                 <span className="text-sm text-portfolio-secondary font-medium">{job.period}</span>
               </div>
               <p className="text-portfolio-muted mb-3">{job.company} - {job.location}</p>
               <ul className="list-disc pl-5 space-y-2">
                 {job.achievements.map((achievement, achievementIndex) => (
-                  <li key={achievementIndex} className="text-gray-700">{achievement}</li>
+                  <li key={achievementIndex} className="text-portfolio-light/70">{achievement}</li>
                 ))}
               </ul>
             </div>

@@ -49,7 +49,13 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="bg-gray-50">
+    <section id="projects" className="bg-portfolio-dark relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-hero-pattern opacity-10"></div>
+        <div className="absolute top-1/3 right-1/3 w-64 h-64 rounded-full bg-portfolio-secondary/5 blur-3xl"></div>
+      </div>
+      
       <div className="section-container">
         <h2 className="section-title">Featured Projects</h2>
         
@@ -57,29 +63,29 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="glass-card rounded-lg overflow-hidden hover:border-portfolio-secondary/30 transition-all duration-300"
             >
               <div className="p-6">
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-semibold text-portfolio-primary">{project.name}</h3>
-                  <span className="text-sm bg-gray-100 rounded-full px-3 py-1 font-medium text-portfolio-muted">
+                  <h3 className="text-xl font-semibold text-portfolio-light">{project.name}</h3>
+                  <span className="text-sm bg-portfolio-primary/50 rounded-full px-3 py-1 font-medium text-portfolio-muted border border-portfolio-secondary/10">
                     {project.year}
                   </span>
                 </div>
                 
                 <div className="mb-4 flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-md">
+                    <span key={techIndex} className="text-xs bg-portfolio-secondary/10 text-portfolio-secondary px-2 py-1 rounded-md border border-portfolio-secondary/20">
                       {tech}
                     </span>
                   ))}
                 </div>
                 
-                <p className="text-gray-700 mb-4">{project.description}</p>
+                <p className="text-portfolio-light/70 mb-4">{project.description}</p>
                 
-                <div className="border-t pt-4">
+                <div className="border-t border-portfolio-secondary/10 pt-4">
                   <h4 className="text-sm font-medium text-portfolio-muted mb-2">Impact:</h4>
-                  <p className="text-gray-700">{project.impact}</p>
+                  <p className="text-portfolio-light/70">{project.impact}</p>
                 </div>
               </div>
             </div>

@@ -32,7 +32,7 @@ const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white bg-opacity-90 shadow-md py-3 backdrop-blur-sm"
+          ? "bg-portfolio-primary bg-opacity-80 shadow-lg py-3 backdrop-blur-sm border-b border-portfolio-secondary/20"
           : "bg-transparent py-6"
       }`}
     >
@@ -40,9 +40,10 @@ const Header: React.FC = () => {
         <div>
           <Link 
             to="/" 
-            className="text-xl md:text-2xl font-bold text-portfolio-primary"
+            className="text-xl md:text-2xl font-bold text-portfolio-light group"
           >
-            Vigneshwaran M
+            <span className="group-hover:text-portfolio-secondary transition-colors">Vigneshwaran</span>
+            <span className="text-portfolio-secondary"> M</span>
           </Link>
         </div>
 
@@ -52,7 +53,7 @@ const Header: React.FC = () => {
             <a
               key={item.name}
               href={item.href}
-              className="font-medium text-gray-600 hover:text-portfolio-secondary transition-colors"
+              className="font-medium text-portfolio-muted hover:text-portfolio-secondary transition-colors"
             >
               {item.name}
             </a>
@@ -61,25 +62,25 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-600 focus:outline-none"
+          className="md:hidden text-portfolio-light focus:outline-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? (
-            <X size={24} className="text-portfolio-primary" />
+            <X size={24} className="text-portfolio-secondary" />
           ) : (
-            <Menu size={24} className="text-portfolio-primary" />
+            <Menu size={24} className="text-portfolio-light" />
           )}
         </button>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white shadow-md py-4 md:hidden">
+          <div className="absolute top-full left-0 right-0 bg-portfolio-primary/95 backdrop-blur-md shadow-lg py-4 md:hidden border-b border-portfolio-secondary/20">
             <div className="section-container flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="font-medium text-gray-600 hover:text-portfolio-secondary py-2"
+                  className="font-medium text-portfolio-muted hover:text-portfolio-secondary py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
