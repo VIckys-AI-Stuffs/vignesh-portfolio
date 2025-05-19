@@ -1,9 +1,67 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_mtw1nwf', // Service ID
+        'template_default', // Template ID (you'll need to create this in EmailJS)
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        },
+        'LifyLbGoAq9mRm96c' // Public Key
+      );
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for contacting me. I'll get back to you soon.",
+      });
+      
+      // Reset form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Failed to send message",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="bg-white">
       <div className="section-container">
@@ -79,7 +137,7 @@ const Contact: React.FC = () => {
           </div>
           
           <div className="md:w-1/2">
-            <form className="bg-gray-50 p-6 rounded-lg shadow-sm">
+            <form className="bg-gray-50 p-6 rounded-lg shadow-sm" onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Your Name
@@ -89,6 +147,9 @@ const Contact: React.FC = () => {
                   id="name" 
                   className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
                   placeholder="John Doe"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               
@@ -101,6 +162,9 @@ const Contact: React.FC = () => {
                   id="email" 
                   className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
                   placeholder="john@example.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               
@@ -113,6 +177,9 @@ const Contact: React.FC = () => {
                   id="subject" 
                   className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
                   placeholder="Project Inquiry"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               
@@ -125,11 +192,18 @@ const Contact: React.FC = () => {
                   rows={4} 
                   className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
                   placeholder="Your message here..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                 ></textarea>
               </div>
               
-              <Button className="w-full bg-portfolio-secondary hover:bg-blue-600">
-                Send Message
+              <Button 
+                type="submit" 
+                className="w-full bg-portfolio-secondary hover:bg-blue-600"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>

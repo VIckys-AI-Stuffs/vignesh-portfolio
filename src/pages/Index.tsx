@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -8,8 +8,15 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from 'emailjs-com';
 
 const Index: React.FC = () => {
+  // Initialize EmailJS when the component mounts
+  useEffect(() => {
+    emailjs.init("LifyLbGoAq9mRm96c");
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
