@@ -1,16 +1,44 @@
 
 import React from "react";
+import { Github, Linkedin, Mail, Smartphone } from "lucide-react";
 
 const Footer: React.FC = () => {
   const year = new Date().getFullYear();
   
   return (
-    <footer className="bg-portfolio-primary text-white py-10">
-      <div className="section-container">
+    <footer className="relative bg-gradient-to-t from-portfolio-primary to-portfolio-primary/95 text-white py-10 overflow-hidden">
+      {/* Tech pattern background */}
+      <div className="absolute inset-0 tech-pattern opacity-10"></div>
+      
+      {/* Circuit lines */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 left-1/4 w-[1px] h-full bg-blue-400"></div>
+        <div className="absolute top-0 left-2/4 w-[1px] h-full bg-blue-400"></div>
+        <div className="absolute top-0 left-3/4 w-[1px] h-full bg-blue-400"></div>
+        <div className="absolute top-1/2 left-0 w-full h-[1px] bg-blue-400"></div>
+      </div>
+      
+      <div className="section-container relative">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h2 className="text-2xl font-bold">Vigneshwaran M</h2>
-            <p className="text-gray-300 mt-1">Software Development Engineer</p>
+            <p className="text-gray-300 mt-1 flex items-center">
+              <Smartphone className="w-4 h-4 mr-2" />
+              Software Development Engineer
+            </p>
+          </div>
+          
+          {/* Social icons */}
+          <div className="flex gap-4 mb-6 md:mb-0">
+            <a href="#" className="text-gray-300 hover:text-portfolio-secondary transition-colors">
+              <Github className="w-5 h-5" />
+            </a>
+            <a href="#" className="text-gray-300 hover:text-portfolio-secondary transition-colors">
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a href="#" className="text-gray-300 hover:text-portfolio-secondary transition-colors">
+              <Mail className="w-5 h-5" />
+            </a>
           </div>
           
           <div>
