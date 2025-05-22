@@ -1,5 +1,6 @@
 
 import React from "react";
+import { MapPin, Briefcase, Book, Smartphone } from "lucide-react";
 
 const About: React.FC = () => {
   return (
@@ -35,22 +36,42 @@ const About: React.FC = () => {
           <div className="md:w-1/3">
             <div className="glass-card p-6 rounded-lg">
               <h3 className="text-xl font-medium mb-4 text-portfolio-light">Personal Info</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="font-medium w-24 text-portfolio-muted">Location:</span>
-                  <span className="text-portfolio-light/80">Chennai, India</span>
+              <ul className="space-y-4">
+                <li className="flex items-center">
+                  <div className="bg-portfolio-primary/80 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                    <MapPin className="text-portfolio-secondary h-5 w-5" />
+                  </div>
+                  <div>
+                    <span className="font-medium text-sm text-portfolio-muted block">Location</span>
+                    <span className="text-portfolio-light">Chennai, India</span>
+                  </div>
                 </li>
-                <li className="flex items-start">
-                  <span className="font-medium w-24 text-portfolio-muted">Experience:</span>
-                  <span className="text-portfolio-light/80">8+ years</span>
+                <li className="flex items-center">
+                  <div className="bg-portfolio-primary/80 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                    <Briefcase className="text-portfolio-secondary h-5 w-5" />
+                  </div>
+                  <div>
+                    <span className="font-medium text-sm text-portfolio-muted block">Experience</span>
+                    <span className="text-portfolio-light">8+ years</span>
+                  </div>
                 </li>
-                <li className="flex items-start">
-                  <span className="font-medium w-24 text-portfolio-muted">Education:</span>
-                  <span className="text-portfolio-light/80">B.E Computer Science and Engineering</span>
+                <li className="flex items-center">
+                  <div className="bg-portfolio-primary/80 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                    <Book className="text-portfolio-secondary h-5 w-5" />
+                  </div>
+                  <div>
+                    <span className="font-medium text-sm text-portfolio-muted block">Education</span>
+                    <span className="text-portfolio-light">B.E Computer Science and Engineering</span>
+                  </div>
                 </li>
-                <li className="flex items-start">
-                  <span className="font-medium w-24 text-portfolio-muted">Focus:</span>
-                  <span className="text-portfolio-light/80">Mobile Application Development</span>
+                <li className="flex items-center">
+                  <div className="bg-portfolio-primary/80 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                    <Smartphone className="text-portfolio-secondary h-5 w-5" />
+                  </div>
+                  <div>
+                    <span className="font-medium text-sm text-portfolio-muted block">Focus</span>
+                    <span className="text-portfolio-light">Mobile Application Development</span>
+                  </div>
                 </li>
               </ul>
             </div>
