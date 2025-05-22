@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
           <h1 className="text-4xl md:text-6xl font-bold text-purple-100 mb-4 animate-fade-in">
             Vigneshwaran M
           </h1>
-          <h2 className="text-xl md:text-2xl text-purple-300 mb-8 animate-fade-in">
+          <h2 className="text-xl md:text-2xl text-white-300 mb-8 animate-fade-in">
             Software Development Engineer
           </h2>
           <p className="text-lg mb-10 text-purple-200 max-w-2xl mx-auto animate-fade-in">
