@@ -17,7 +17,7 @@ const Index: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col bg-portfolio-primary">
+    <div className="flex min-h-screen flex-col bg-black">
       <Header />
       <main className="flex-grow">
         <Hero />

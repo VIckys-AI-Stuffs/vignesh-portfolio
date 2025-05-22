@@ -6,7 +6,7 @@ const Spline = lazy(() => import('@splinetool/react-spline'));
 const HeroSplineBackground = () => {
   return (
     <div className="absolute inset-0 z-0">
-      <Suspense fallback={<div className="w-full h-full bg-portfolio-primary" />}>
+      <Suspense fallback={<div className="w-full h-full bg-black" />}>
         <Spline
           style={{
             width: '100%',

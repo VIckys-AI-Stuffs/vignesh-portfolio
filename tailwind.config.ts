@@ -53,13 +53,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Galaxy theme colors
+				// Galaxy theme colors - updated to match purple galaxy theme
 				portfolio: {
-					primary: "#0E0F19", // Dark space blue
-					secondary: "#7D8DFF", // Bright blue accent
-					accent: "#FF5E7D", // Accent pink
+					primary: "#0E0519", // Dark space blue with purple tint
+					secondary: "#7D5DFF", // Brighter purple accent
+					accent: "#FF5EAD", // Pink accent
 					light: "#E6E8FF", // Light text
-					dark: "#070812", // Very dark blue
+					dark: "#070512", // Very dark blue with purple tint
 					muted: "#8B92B2" // Muted text color
 				}
 			},
@@ -155,8 +155,8 @@ export default {
 				'star-pulse': 'star-pulse 3s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'galaxy-gradient': 'radial-gradient(circle, rgba(25, 33, 80, 0.8) 0%, rgba(14, 15, 25, 1) 100%)',
-				'hero-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237d8dff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
+				'galaxy-gradient': 'radial-gradient(circle, rgba(80, 25, 80, 0.8) 0%, rgba(14, 5, 25, 1) 100%)',
+				'hero-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C6FFF' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
 			}
 		}
 	},
