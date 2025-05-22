@@ -4,6 +4,8 @@ import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from 'emailjs-com';
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const Contact: React.FC = () => {
   const { toast } = useToast();
@@ -25,10 +27,10 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Send email using EmailJS
+      // Send email using EmailJS with the updated template ID
       await emailjs.send(
         'service_mtw1nwf', // Service ID
-        'template_default', // Template ID (you'll need to create this in EmailJS)
+        'template_aqvoa7i', // Updated Template ID
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -63,27 +65,33 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="bg-white">
+    <section id="contact" className="bg-portfolio-dark relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-hero-pattern opacity-10"></div>
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full bg-portfolio-secondary/5 blur-3xl"></div>
+      </div>
+      
       <div className="section-container">
         <h2 className="section-title">Get In Touch</h2>
         
         <div className="flex flex-col md:flex-row gap-10">
           <div className="md:w-1/2 flex flex-col justify-center">
-            <p className="text-lg text-gray-700 mb-8">
+            <p className="text-lg text-portfolio-light mb-8">
               I'm always open to discussing new projects, opportunities, or partnerships. 
               Feel free to reach out to me using any of the following contact methods.
             </p>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center">
+                <div className="bg-portfolio-primary/80 w-12 h-12 rounded-full flex items-center justify-center">
                   <Mail className="text-portfolio-secondary h-5 w-5" />
                 </div>
                 <div>
                   <h3 className="text-sm text-portfolio-muted">Email</h3>
                   <a 
                     href="mailto:vigneshwaran.mutharasan@gmail.com" 
-                    className="text-portfolio-primary hover:text-portfolio-secondary transition-colors"
+                    className="text-portfolio-light hover:text-portfolio-secondary transition-colors"
                   >
                     vigneshwaran.mutharasan@gmail.com
                   </a>
@@ -91,17 +99,17 @@ const Contact: React.FC = () => {
               </div>
               
               <div className="flex items-center gap-4">
-                <div className="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center">
+                <div className="bg-portfolio-primary/80 w-12 h-12 rounded-full flex items-center justify-center">
                   <Phone className="text-portfolio-secondary h-5 w-5" />
                 </div>
                 <div>
                   <h3 className="text-sm text-portfolio-muted">Phone</h3>
-                  <span className="text-portfolio-primary">8667036252</span>
+                  <span className="text-portfolio-light">8667036252</span>
                 </div>
               </div>
               
               <div className="flex items-center gap-4">
-                <div className="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center">
+                <div className="bg-portfolio-primary/80 w-12 h-12 rounded-full flex items-center justify-center">
                   <Github className="text-portfolio-secondary h-5 w-5" />
                 </div>
                 <div>
@@ -110,7 +118,7 @@ const Contact: React.FC = () => {
                     href="https://github.com/VigneshDev16" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-portfolio-primary hover:text-portfolio-secondary transition-colors"
+                    className="text-portfolio-light hover:text-portfolio-secondary transition-colors"
                   >
                     github.com/VigneshDev16
                   </a>
@@ -118,7 +126,7 @@ const Contact: React.FC = () => {
               </div>
               
               <div className="flex items-center gap-4">
-                <div className="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center">
+                <div className="bg-portfolio-primary/80 w-12 h-12 rounded-full flex items-center justify-center">
                   <Linkedin className="text-portfolio-secondary h-5 w-5" />
                 </div>
                 <div>
@@ -127,7 +135,7 @@ const Contact: React.FC = () => {
                     href="https://linkedin.com/in/vigneshwaran-mutharasan" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-portfolio-primary hover:text-portfolio-secondary transition-colors"
+                    className="text-portfolio-light hover:text-portfolio-secondary transition-colors"
                   >
                     linkedin.com/in/vigneshwaran-mutharasan
                   </a>
@@ -137,15 +145,15 @@ const Contact: React.FC = () => {
           </div>
           
           <div className="md:w-1/2">
-            <form className="bg-gray-50 p-6 rounded-lg shadow-sm" onSubmit={handleSubmit}>
+            <form className="glass-card p-6 rounded-lg" onSubmit={handleSubmit}>
               <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="name" className="block text-sm font-medium text-portfolio-light mb-1">
                   Your Name
                 </label>
-                <input 
+                <Input 
                   type="text" 
                   id="name" 
-                  className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
+                  className="bg-portfolio-primary/30 border-portfolio-secondary/20 text-portfolio-light focus:border-portfolio-secondary" 
                   placeholder="John Doe"
                   value={formData.name}
                   onChange={handleChange}
@@ -154,13 +162,13 @@ const Contact: React.FC = () => {
               </div>
               
               <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="email" className="block text-sm font-medium text-portfolio-light mb-1">
                   Email Address
                 </label>
-                <input 
+                <Input 
                   type="email" 
                   id="email" 
-                  className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
+                  className="bg-portfolio-primary/30 border-portfolio-secondary/20 text-portfolio-light focus:border-portfolio-secondary" 
                   placeholder="john@example.com"
                   value={formData.email}
                   onChange={handleChange}
@@ -169,13 +177,13 @@ const Contact: React.FC = () => {
               </div>
               
               <div className="mb-4">
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="subject" className="block text-sm font-medium text-portfolio-light mb-1">
                   Subject
                 </label>
-                <input 
+                <Input 
                   type="text" 
                   id="subject" 
-                  className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
+                  className="bg-portfolio-primary/30 border-portfolio-secondary/20 text-portfolio-light focus:border-portfolio-secondary" 
                   placeholder="Project Inquiry"
                   value={formData.subject}
                   onChange={handleChange}
@@ -184,23 +192,23 @@ const Contact: React.FC = () => {
               </div>
               
               <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="message" className="block text-sm font-medium text-portfolio-light mb-1">
                   Message
                 </label>
-                <textarea 
+                <Textarea 
                   id="message" 
                   rows={4} 
-                  className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
+                  className="bg-portfolio-primary/30 border-portfolio-secondary/20 text-portfolio-light focus:border-portfolio-secondary resize-none" 
                   placeholder="Your message here..."
                   value={formData.message}
                   onChange={handleChange}
                   required
-                ></textarea>
+                />
               </div>
               
               <Button 
                 type="submit" 
-                className="w-full bg-portfolio-secondary hover:bg-blue-600"
+                className="w-full bg-portfolio-secondary hover:bg-blue-600 text-portfolio-dark font-medium"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}

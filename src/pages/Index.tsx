@@ -8,7 +8,6 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import { useToast } from "@/hooks/use-toast";
 import emailjs from 'emailjs-com';
 
 const Index: React.FC = () => {
