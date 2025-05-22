@@ -1,70 +1,15 @@
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { ArrowDown, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import HeroSplineBackground from "./ui/HeroSplineBackground";
 
 const Hero: React.FC = () => {
-  const starsContainerRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    // Create stars dynamically
-    if (starsContainerRef.current) {
-      const container = starsContainerRef.current;
-      container.innerHTML = '';
-      
-      // Create random number of stars (80-100)
-      const starCount = Math.floor(Math.random() * 40) + 80;
-      
-      for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        
-        // Random star size
-        const sizeClass = Math.random() > 0.7 
-          ? 'large-star' 
-          : Math.random() > 0.5 
-            ? 'medium-star' 
-            : 'small-star';
-            
-        star.className = `star ${sizeClass}`;
-        
-        // Random position
-        star.style.left = `${Math.random() * 100}%`;
-        star.style.top = `${Math.random() * 100}%`;
-        
-        // Random animation delay
-        star.style.animationDelay = `${Math.random() * 5}s`;
-        
-        container.appendChild(star);
-      }
-    }
-  }, []);
-
   return (
-    <section className="relative pt-24 md:pt-32 pb-16 galaxy-bg min-h-screen flex items-center">
-      {/* Stars background */}
-      <div ref={starsContainerRef} className="absolute inset-0 overflow-hidden"></div>
+    <section id="hero" className="relative pt-24 md:pt-32 pb-16 min-h-screen flex items-center">
+      {/* Spline Background */}
+      <HeroSplineBackground />
       
-      {/* Galaxy elements */}
-      <div className="absolute inset-0 -z-10">
-        {/* Nebula glow effects */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-portfolio-secondary/5 blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-portfolio-accent/5 blur-3xl"></div>
-        
-        {/* Circuit board lines */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-0 w-full h-[1px] bg-portfolio-secondary"></div>
-          <div className="absolute top-2/4 left-0 w-full h-[1px] bg-portfolio-secondary"></div>
-          <div className="absolute top-3/4 left-0 w-full h-[1px] bg-portfolio-secondary"></div>
-          
-          <div className="absolute bottom-0 left-1/4 w-[1px] h-full bg-portfolio-secondary"></div>
-          <div className="absolute bottom-0 left-2/4 w-[1px] h-full bg-portfolio-secondary"></div>
-          <div className="absolute bottom-0 left-3/4 w-[1px] h-full bg-portfolio-secondary"></div>
-        </div>
-        
-        {/* Grid pattern */}
-        <div className="absolute inset-0 bg-hero-pattern opacity-10"></div>
-      </div>
-
       <div className="section-container flex flex-col items-center relative z-10">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold text-portfolio-light mb-4 animate-fade-in">

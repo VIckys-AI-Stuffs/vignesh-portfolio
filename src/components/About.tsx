@@ -4,7 +4,7 @@ import { MapPin, Briefcase, Book, Smartphone } from "lucide-react";
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="bg-portfolio-primary relative overflow-hidden">
+    <section id="about" className="bg-portfolio-primary relative overflow-hidden pt-24">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-portfolio-secondary/5 blur-3xl rounded-full"></div>

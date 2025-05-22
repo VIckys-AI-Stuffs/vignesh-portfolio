@@ -9,7 +9,6 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import emailjs from 'emailjs-com';
-import { GalaxyHeroSection } from "@/components/ui/galaxy-interactive-hero-section";
 
 const Index: React.FC = () => {
   // Initialize EmailJS when the component mounts
@@ -21,10 +20,7 @@ const Index: React.FC = () => {
     <div className="flex min-h-screen flex-col bg-portfolio-primary">
       <Header />
       <main className="flex-grow">
-        {/* Use the new GalaxyHeroSection instead of Hero */}
-        <div className="h-screen">
-          <GalaxyHeroSection />
-        </div>
+        <Hero />
         <About />
         <Skills />
         <Experience />
