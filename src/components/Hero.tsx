@@ -5,6 +5,13 @@ import { Button } from "@/components/ui/button";
 import HeroSplineBackground from "./ui/HeroSplineBackground";
 
 const Hero: React.FC = () => {
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section id="hero" className="relative pt-24 md:pt-32 pb-16 min-h-screen flex items-center">
       {/* Spline Background */}
@@ -25,16 +32,13 @@ const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Button className="bg-purple-500 hover:bg-purple-600 text-white flex items-center gap-2">
-              <a href="#contact" className="flex items-center gap-2">
+            <Button onClick={() => scrollToSection("contact")} className="bg-purple-500 hover:bg-purple-600 text-white flex items-center gap-2">
                 Get in touch
-              </a>
+             
             </Button>
-            <Button variant="outline" className="border-purple-400 text-purple-300 hover:bg-purple-500/10">
-              <a href="#projects" className="flex items-center gap-2">
+            <Button  variant="outline" onClick={() => scrollToSection("projects")} className="border-purple-400 text-purple-300 hover:bg-purple-500/10">
                 <Smartphone className="w-4 h-4" />
                 View Projects
-              </a>
             </Button>
           </div>
         </div>

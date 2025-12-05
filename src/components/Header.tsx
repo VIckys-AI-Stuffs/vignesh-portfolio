@@ -46,13 +46,13 @@ const Header: React.FC = () => {
     >
       <div className="section-container flex items-center justify-between">
         <div>
-          <Link 
-            to="/" 
+          <button 
+           onClick={() => scrollToSection("hero")}
             className="text-xl md:text-2xl font-bold text-portfolio-light group"
           >
             <span className="group-hover:text-portfolio-secondary transition-colors">Vigneshwaran</span>
             <span className="text-portfolio-secondary"> M</span>
-          </Link>
+          </button>
         </div>
 
         {/* Desktop Navigation */}
