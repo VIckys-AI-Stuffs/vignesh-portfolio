@@ -10,6 +10,9 @@ const Hero: React.FC = () => {
       {/* Spline Background */}
       <HeroSplineBackground />
       
+      {/* Blur overlay for better text visibility */}
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] z-[1]" />
+      
       <div className="section-container flex flex-col items-center relative z-10">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold text-purple-100 mb-4 animate-fade-in">
