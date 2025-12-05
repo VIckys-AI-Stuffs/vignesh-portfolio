@@ -93,13 +93,12 @@ const Hero: React.FC = () => {
           </div>
         </div>
         
-        <a 
-          href="#about" 
-          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-purple-400 hover:text-purple-200 transition-colors mt-16"
+        <button
+          onClick={() => scrollToSection("about")}
         >
           <ArrowDown className="animate-bounce" />
           <span className="sr-only">Scroll down</span>
-        </a>
+        </button>
       </div>
     </section>
   );
