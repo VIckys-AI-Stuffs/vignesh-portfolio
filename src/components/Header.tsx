@@ -8,11 +8,11 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" }
+    { name: "About", href: "about" },
+    { name: "Skills", href: "skills" },
+    { name: "Experience", href: "experience" },
+    { name: "Projects", href: "projects" },
+    { name: "Contact", href: "contact" }
   ];
 
   useEffect(() => {
@@ -27,6 +27,14 @@ const Header: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header
@@ -50,13 +58,13 @@ const Header: React.FC = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
           {navItems.map((item) => (
-            <a
+            <button
               key={item.name}
-              href={item.href}
+              onClick={() => scrollToSection(item.href)}
               className="font-medium text-portfolio-muted hover:text-portfolio-secondary transition-colors"
             >
               {item.name}
-            </a>
+            </button>
           ))}
         </nav>
 
@@ -77,14 +85,13 @@ const Header: React.FC = () => {
           <div className="absolute top-full left-0 right-0 bg-portfolio-primary/95 backdrop-blur-md shadow-lg py-4 md:hidden border-b border-portfolio-secondary/20">
             <div className="section-container flex flex-col space-y-4">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="font-medium text-portfolio-muted hover:text-portfolio-secondary py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => scrollToSection(item.href)}
+                  className="font-medium text-portfolio-muted hover:text-portfolio-secondary py-2 text-left"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
             </div>
           </div>
