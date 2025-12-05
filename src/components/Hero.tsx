@@ -41,10 +41,47 @@ const Hero: React.FC = () => {
         
         {/* Mobile device floating illustration */}
         <div className="absolute -bottom-16 right-10 hidden lg:block animate-float">
-          <div className="w-32 h-56 border-2 border-purple-400/50 rounded-3xl relative bg-black/20 backdrop-blur-sm">
+          <div className="w-36 h-64 border-2 border-purple-400/50 rounded-3xl relative bg-black/30 backdrop-blur-sm shadow-lg shadow-purple-500/20">
             <div className="w-16 h-2 bg-purple-400/50 absolute top-2 left-1/2 transform -translate-x-1/2 rounded-full"></div>
-            <div className="absolute inset-2 overflow-hidden rounded-2xl bg-portfolio-primary">
-              <div className="w-full h-full bg-gradient-to-br from-purple-500/10 to-portfolio-accent/5 shimmer-effect"></div>
+            <div className="absolute inset-3 top-6 overflow-hidden rounded-2xl bg-[#1a1025]">
+              {/* Mini Code Editor UI */}
+              <div className="p-2 space-y-1.5">
+                {/* Status bar */}
+                <div className="flex items-center gap-1 mb-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-red-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+                </div>
+                {/* Code lines */}
+                <div className="flex items-center gap-1">
+                  <span className="text-[6px] text-purple-400 font-mono">const</span>
+                  <span className="text-[6px] text-blue-300 font-mono">App</span>
+                  <span className="text-[6px] text-white font-mono">=</span>
+                  <span className="text-[6px] text-yellow-300 font-mono">()</span>
+                </div>
+                <div className="flex items-center gap-1 pl-2">
+                  <span className="text-[6px] text-purple-400 font-mono">return</span>
+                  <span className="text-[6px] text-green-300 font-mono">{"<View>"}</span>
+                </div>
+                <div className="pl-4">
+                  <span className="text-[6px] text-green-300 font-mono">{"<Text>"}</span>
+                </div>
+                <div className="pl-6">
+                  <span className="text-[6px] text-orange-300 font-mono">Hello!</span>
+                </div>
+                <div className="pl-4">
+                  <span className="text-[6px] text-green-300 font-mono">{"</Text>"}</span>
+                </div>
+                <div className="pl-2">
+                  <span className="text-[6px] text-green-300 font-mono">{"</View>"}</span>
+                </div>
+                {/* Terminal output */}
+                <div className="mt-2 pt-2 border-t border-purple-500/30">
+                  <div className="text-[5px] text-green-400 font-mono">$ npm start</div>
+                  <div className="text-[5px] text-purple-300 font-mono">✓ Building...</div>
+                  <div className="text-[5px] text-green-400 font-mono animate-pulse">● Running</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
