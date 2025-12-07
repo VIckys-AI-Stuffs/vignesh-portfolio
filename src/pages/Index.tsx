@@ -8,6 +8,7 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Stars from "@/components/Stars";
 import ScrollToTop from "@/components/ScrollToTop";
 import emailjs from 'emailjs-com';
 
@@ -19,6 +20,7 @@ const Index: React.FC = () => {
 
   return (
     <div className="flex min-h-screen flex-col bg-black">
+      <Stars />
       <Header />
       <main className="flex-grow">
         <Hero />

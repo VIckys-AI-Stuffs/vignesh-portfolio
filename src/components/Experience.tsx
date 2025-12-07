@@ -15,7 +15,7 @@ const Experience: React.FC = () => {
       title: "Mobility Engineer",
       company: "REACH | Vantage Solutions | Aloha Engineering Pvt. Ltd.",
       location: "Chennai, India",
-      period: "08/2023 - present",
+      period: "08/2023 - 12/2025",
       achievements: [
         "Took ownership of upgrading the REACH Mobile App framework to the latest version, ensuring improved performance, security, and compatibility with the latest mobile OS updates.",
         "Played a key role in implementing new features like Driving Mode, Filter and Sort, enhancing user experience, and expanding app functionality to meet evolving customer needs.",
@@ -36,7 +36,7 @@ const Experience: React.FC = () => {
       ]
     },
     {
-      title: "Technical Lead",
+      title: "Technical Lead (Freelance)",
       company: "Eternosoft LLP",
       location: "Chennai, India",
       period: "01/2022 - 04/2022",
@@ -60,7 +60,7 @@ const Experience: React.FC = () => {
       title: "Associate - Mobile Applications",
       company: "Lennox India Technology Centre Pvt Ltd",
       location: "Chennai, India",
-      period: "06/2017 - 04/2020",
+      period: "07/2017 - 04/2020",
       achievements: [
         "Spearheaded the development of several mobile applications using Xamarin.Forms, enhancing workflow processes and providing robust technical support through mobile platforms.",
         "Developed the LennoxPros Mobile Wrapper Application in Xamarin, extending exclusive mobile features to the eCommerce platform, improving user interaction and transaction efficiency.",

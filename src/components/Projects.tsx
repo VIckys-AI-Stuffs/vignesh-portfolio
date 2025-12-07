@@ -45,6 +45,12 @@ const Projects: React.FC = () => {
       technologies: ["Xamarin", "Firebase", "Google Maps API"],
       description: "Developed an internal carpooling app for employees, featuring live tracking and route optimization similar to popular ride-sharing apps like OLA and Quickride.",
       impact: "The app promoted sustainable commuting practices within the organization, reducing the company's carbon footprint and improving employee satisfaction."
+    },{
+      name: "SPark - Smart Parking Solution",
+      year: "2017",
+      technologies: ["Xamarin", "Firebase", "Google Maps API", "Geofencing"],
+      description: "Geofencing Solutions: Developed SPARK, a mobile app using Xamarin, that efficiently allocated parking slots for employees through geofencing technology, improving parking management and user convenience.",
+      impact: "The app streamlined parking operations, reduced congestion, and enhanced the overall employee experience."
     }
   ];
 
