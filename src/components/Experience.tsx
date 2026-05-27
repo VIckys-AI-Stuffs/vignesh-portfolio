@@ -12,6 +12,21 @@ interface Job {
 const Experience: React.FC = () => {
   const jobs: Job[] = [
     {
+      title: "Senior Consultant – Frontend & React Native Developer",
+      company: "Optimum Infosystem Pvt Ltd | Mashreq",
+      location: "Chennai, India",
+      period: "01/2026 - Present",
+      achievements: [
+        "Designing and developing KYC onboarding and compliance workflows for enterprise business banking platforms using React and React Native.",
+        "Implemented sanctions and restricted-country validation systems aligned with banking compliance requirements.",
+        "Developed scalable modules for company onboarding, contact management, and shareholder ownership workflows.",
+        "Improved enterprise form architecture, validation systems, and frontend maintainability for complex banking workflows.",
+        "Collaborated with compliance, backend, QA, and product stakeholders to deliver secure and compliant financial solutions.",
+        "Contributed to reusable component systems and shared frontend architecture across web and mobile platforms.",
+        "Collaborated directly with business and compliance stakeholders to support enterprise onboarding and regulatory workflows."
+      ]
+    },
+    {
       title: "Mobility Engineer",
       company: "REACH | Vantage Solutions | Aloha Engineering Pvt. Ltd.",
       location: "Chennai, India",
