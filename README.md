@@ -1,73 +1,54 @@
-# Welcome to your Lovable project
+# Vigneshwaran M — Portfolio
 
-## Project info
+Personal portfolio website showcasing 8+ years of experience in React Native, enterprise frontend systems, and fintech/healthcare applications.
 
-**URL**: https://lovable.dev/projects/2dfc08c2-6584-4127-9cf8-4f178259b421
+**Live site**: [vigneshwaran.dev](https://lovable.dev/projects/2dfc08c2-6584-4127-9cf8-4f178259b421)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## About
 
-**Use Lovable**
+Built with React, TypeScript, Vite, and Tailwind CSS. Features sections for experience, projects, skills, and contact — kept minimal, dark-themed, and fast.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2dfc08c2-6584-4127-9cf8-4f178259b421) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Sections
 
-**Use your preferred IDE**
+- **Hero** — Intro with animated background
+- **About** — Bio, personal info, blog links (Dev.to · Medium)
+- **Skills** — Frontend, mobile, backend, cloud, and delivery tools
+- **Experience** — Full work history from Lennox (2017) to Mashreq/Optimum (2026)
+- **Projects** — Featured projects including [indmoney-mcp](https://github.com/VIckys-AI-Stuffs/indmoney-mcp-python)
+- **Contact** — Get in touch form
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Tech Stack
 
-Follow these steps:
+| Layer | Tech |
+|---|---|
+| Framework | React 18 + TypeScript |
+| Build | Vite |
+| Styling | Tailwind CSS |
+| UI Components | shadcn/ui |
+| 3D Background | Spline |
+
+---
+
+## Running Locally
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+git clone https://github.com/VigneshDev16/vignesh-portfolio.git
+cd vignesh-portfolio
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Connect
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/2dfc08c2-6584-4127-9cf8-4f178259b421) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- GitHub: [github.com/VigneshDev16](https://github.com/VigneshDev16)
+- LinkedIn: [linkedin.com/in/vigneshwaran-mutharasan](https://linkedin.com/in/vigneshwaran-mutharasan)
+- Dev.to: [dev.to/vigneshwaran_m](https://dev.to/vigneshwaran_m)
+- Medium: [medium.com/@vickymsmuthu](https://medium.com/@vickymsmuthu)
