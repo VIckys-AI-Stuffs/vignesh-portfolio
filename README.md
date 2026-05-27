@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing 8+ years of experience in React Native, enterprise frontend systems, and fintech/healthcare applications.
 
-**Live site**: [vigneshwaran.dev](https://lovable.dev/projects/2dfc08c2-6584-4127-9cf8-4f178259b421)
+**Live site**: [vickys-ai-stuffs.github.io/vignesh-portfolio](https://vickys-ai-stuffs.github.io/vignesh-portfolio/)
 
 ---
 
@@ -38,7 +38,7 @@ Built with React, TypeScript, Vite, and Tailwind CSS. Features sections for expe
 ## Running Locally
 
 ```sh
-git clone https://github.com/VigneshDev16/vignesh-portfolio.git
+git clone https://github.com/VIckys-AI-Stuffs/vignesh-portfolio.git
 cd vignesh-portfolio
 npm install
 npm run dev
