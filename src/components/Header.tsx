@@ -15,6 +15,11 @@ const Header: React.FC = () => {
     { name: "Contact", href: "contact" }
   ];
 
+  const blogLinks = [
+    { name: "Dev.to", url: "https://dev.to/vigneshwaran_m" },
+    { name: "Medium", url: "https://medium.com/@vickymsmuthu" }
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -56,7 +61,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden md:flex items-center space-x-6">
           {navItems.map((item) => (
             <button
               key={item.name}
@@ -66,6 +71,19 @@ const Header: React.FC = () => {
               {item.name}
             </button>
           ))}
+          <div className="flex items-center gap-3 border-l border-portfolio-secondary/20 pl-6">
+            {blogLinks.map((blog) => (
+              <a
+                key={blog.name}
+                href={blog.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-portfolio-muted hover:text-portfolio-secondary transition-colors text-sm"
+              >
+                {blog.name}
+              </a>
+            ))}
+          </div>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -93,6 +111,19 @@ const Header: React.FC = () => {
                   {item.name}
                 </button>
               ))}
+              <div className="border-t border-portfolio-secondary/20 pt-4 flex gap-4">
+                {blogLinks.map((blog) => (
+                  <a
+                    key={blog.name}
+                    href={blog.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-portfolio-muted hover:text-portfolio-secondary transition-colors text-sm"
+                  >
+                    {blog.name}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         )}

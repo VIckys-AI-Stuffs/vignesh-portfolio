@@ -1,6 +1,6 @@
 
 import React from "react";
-import { MapPin, Briefcase, Book, Smartphone } from "lucide-react";
+import { MapPin, Briefcase, Book, Smartphone, PenLine } from "lucide-react";
 
 const About: React.FC = () => {
   return (
@@ -71,6 +71,33 @@ const About: React.FC = () => {
                   <div>
                     <span className="font-medium text-sm text-purple-300 block">Focus</span>
                     <span className="text-purple-100">Mobile Application Development</span>
+                  </div>
+                </li>
+                <li className="flex items-center">
+                  <div className="bg-purple-900/30 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                    <PenLine className="text-purple-400 h-5 w-5" />
+                  </div>
+                  <div>
+                    <span className="font-medium text-sm text-purple-300 block">Writing</span>
+                    <div className="flex gap-3 mt-0.5">
+                      <a
+                        href="https://dev.to/vigneshwaran_m"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-purple-100 hover:text-purple-400 transition-colors text-sm"
+                      >
+                        Dev.to
+                      </a>
+                      <span className="text-purple-500">·</span>
+                      <a
+                        href="https://medium.com/@vickymsmuthu"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-purple-100 hover:text-purple-400 transition-colors text-sm"
+                      >
+                        Medium
+                      </a>
+                    </div>
                   </div>
                 </li>
               </ul>
