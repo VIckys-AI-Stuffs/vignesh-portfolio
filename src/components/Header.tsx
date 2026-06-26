@@ -86,6 +86,13 @@ const Header: React.FC = () => {
               </a>
             ))}
           </div>
+          <button
+            onClick={() => window.dispatchEvent(new Event("open-cmdk"))}
+            className="flex items-center gap-1 text-xs text-portfolio-muted hover:text-portfolio-secondary border border-white/10 rounded-md px-2 py-1 transition-colors"
+            aria-label="Open command palette"
+          >
+            <span className="text-[13px] leading-none">⌘</span>K
+          </button>
         </nav>
 
         {/* Mobile Menu Button */}

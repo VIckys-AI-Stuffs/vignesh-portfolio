@@ -14,6 +14,7 @@ import Scene3D from "@/components/Scene3D";
 import Interactive from "@/components/Interactive";
 import Preloader from "@/components/Preloader";
 import ScrollProgress from "@/components/ScrollProgress";
+import CommandPalette from "@/components/CommandPalette";
 import TechMarquee from "@/components/TechMarquee";
 import ScrollToTop from "@/components/ScrollToTop";
 import emailjs from 'emailjs-com';
@@ -28,6 +29,7 @@ const Index: React.FC = () => {
     <div className="relative flex min-h-screen flex-col bg-transparent">
       <Preloader />
       <ScrollProgress />
+      <CommandPalette />
       <Background />
       <Scene3D />
       <Interactive />

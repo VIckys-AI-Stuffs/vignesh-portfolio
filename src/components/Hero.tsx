@@ -1,11 +1,9 @@
-
 import React from "react";
 import { ArrowDown, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Magnetic from "@/components/ui/Magnetic";
 
 const Hero: React.FC = () => {
-
   const scrollToSection = (sectionId: string) => {
     const lenis = (window as unknown as { __lenis?: { scrollTo: (t: string, o?: object) => void } }).__lenis;
     if (lenis) {
@@ -14,26 +12,26 @@ const Hero: React.FC = () => {
       document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   return (
     <section id="hero" className="relative pt-24 md:pt-32 pb-16 min-h-screen flex items-center">
-      {/* Vignette to keep the headline legible over the 3D scene */}
       <div className="absolute inset-0 z-[1] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 62% 52% at 50% 44%, rgba(5,6,12,0.6), transparent 72%)" }} />
+        style={{ background: "radial-gradient(ellipse 60% 50% at 50% 45%, rgba(5,6,12,0.55), transparent 72%)" }} />
 
-      <div className="section-container flex flex-col items-center relative z-10">
+      <div className="section-container relative z-10 flex flex-col items-center">
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-purple-100 mb-4 animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold text-purple-100 mb-4 animate-fade-in">
             Vigneshwaran <span className="gradient-animate">M</span>
           </h1>
-          <h2 className="text-xl md:text-2xl text-white-300 mb-8 animate-fade-in">
+          <h2 className="text-xl md:text-2xl text-white-300 mb-7 animate-fade-in">
             I build apps that scale.
           </h2>
-          <p className="text-lg mb-10 text-purple-200 max-w-2xl mx-auto animate-fade-in">
+          <p className="text-lg mb-10 text-purple-200/90 max-w-2xl mx-auto animate-fade-in">
             Seasoned mobile engineer with over 9 years of experience, specializing in
             React Native. I build secure, high-performance apps for fintech, healthcare,
             and enterprise — from architecture to delivery, across iOS and Android.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
             <Magnetic>
               <Button onClick={() => scrollToSection("contact")} className="bg-purple-500 hover:bg-purple-600 text-white flex items-center gap-2">

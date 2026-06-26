@@ -61,7 +61,7 @@ const featured: Feature[] = [
     description:
       "A mobile app for a premium, eco-friendly waterless car-wash service — booking, scheduling and digital operations across the whole customer journey.",
     tech: ["React Native", "Firebase"],
-    image: "works/eco3.png",
+    image: "works/eco2.png",
     url: "https://eternosoft.in/Ecocarwash.html",
   },
 ];
