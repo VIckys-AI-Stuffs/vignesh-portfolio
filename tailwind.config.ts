@@ -70,7 +70,8 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
-				heading: ['Poppins', 'sans-serif']
+				heading: ['Space Grotesk', 'Poppins', 'sans-serif'],
+				display: ['Space Grotesk', 'sans-serif']
 			},
 			keyframes: {
 				'accordion-down': {

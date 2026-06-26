@@ -2,97 +2,61 @@
 import React from "react";
 import { ArrowDown, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import HeroSplineBackground from "./ui/HeroSplineBackground";
+import Magnetic from "@/components/ui/Magnetic";
 
 const Hero: React.FC = () => {
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const lenis = (window as unknown as { __lenis?: { scrollTo: (t: string, o?: object) => void } }).__lenis;
+    if (lenis) {
+      lenis.scrollTo(`#${sectionId}`, { offset: -70 });
+    } else {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     }
   };
   return (
     <section id="hero" className="relative pt-24 md:pt-32 pb-16 min-h-screen flex items-center">
-      {/* Spline Background */}
-      <HeroSplineBackground />
-      
-      {/* Blur overlay for better text visibility */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] z-[1]" />
-      
+      {/* Vignette to keep the headline legible over the 3D scene */}
+      <div className="absolute inset-0 z-[1] pointer-events-none"
+        style={{ background: "radial-gradient(ellipse 62% 52% at 50% 44%, rgba(5,6,12,0.6), transparent 72%)" }} />
+
       <div className="section-container flex flex-col items-center relative z-10">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold text-purple-100 mb-4 animate-fade-in">
-            Vigneshwaran M
+            Vigneshwaran <span className="gradient-animate">M</span>
           </h1>
           <h2 className="text-xl md:text-2xl text-white-300 mb-8 animate-fade-in">
-            Software Development Engineer
+            I build apps that scale.
           </h2>
           <p className="text-lg mb-10 text-purple-200 max-w-2xl mx-auto animate-fade-in">
-            Seasoned Mobile Application Developer with over 8 years of experience, 
-            specializing in React Native. Adept at building high-performance, 
-            scalable mobile applications for iOS and Android.
+            Seasoned mobile engineer with over 9 years of experience, specializing in
+            React Native. I build secure, high-performance apps for fintech, healthcare,
+            and enterprise — from architecture to delivery, across iOS and Android.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Button onClick={() => scrollToSection("contact")} className="bg-purple-500 hover:bg-purple-600 text-white flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
+            <Magnetic>
+              <Button onClick={() => scrollToSection("contact")} className="bg-purple-500 hover:bg-purple-600 text-white flex items-center gap-2">
                 Get in touch
-             
-            </Button>
-            <Button  variant="outline" onClick={() => scrollToSection("projects")} className="border-purple-400 text-purple-300 hover:bg-purple-500/10">
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button variant="outline" onClick={() => scrollToSection("projects")} className="border-purple-400 text-purple-300 hover:bg-purple-500/10">
                 <Smartphone className="w-4 h-4" />
                 View Projects
-            </Button>
+              </Button>
+            </Magnetic>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-sm text-purple-200/60 animate-fade-in">
+            {["React Native", "TypeScript", "New Architecture", "Fintech", "AWS"].map((t, i) => (
+              <span key={t} className="inline-flex items-center gap-2">
+                {i > 0 && <span className="text-purple-400/40">·</span>}
+                {t}
+              </span>
+            ))}
           </div>
         </div>
-        
-        {/* Mobile device floating illustration */}
-        <div className="absolute -bottom-16 right-10 hidden lg:block animate-float">
-          <div className="w-36 h-64 border-2 border-purple-400/50 rounded-3xl relative bg-black/30 backdrop-blur-sm shadow-lg shadow-purple-500/20">
-            <div className="w-16 h-2 bg-purple-400/50 absolute top-2 left-1/2 transform -translate-x-1/2 rounded-full"></div>
-            <div className="absolute inset-3 top-6 overflow-hidden rounded-2xl bg-[#1a1025]">
-              {/* Mini Code Editor UI */}
-              <div className="p-2 space-y-1.5">
-                {/* Status bar */}
-                <div className="flex items-center gap-1 mb-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-red-400"></div>
-                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-                </div>
-                {/* Code lines */}
-                <div className="flex items-center gap-1">
-                  <span className="text-[6px] text-purple-400 font-mono">const</span>
-                  <span className="text-[6px] text-blue-300 font-mono">App</span>
-                  <span className="text-[6px] text-white font-mono">=</span>
-                  <span className="text-[6px] text-yellow-300 font-mono">()</span>
-                </div>
-                <div className="flex items-center gap-1 pl-2">
-                  <span className="text-[6px] text-purple-400 font-mono">return</span>
-                  <span className="text-[6px] text-green-300 font-mono">{"<View>"}</span>
-                </div>
-                <div className="pl-4">
-                  <span className="text-[6px] text-green-300 font-mono">{"<Text>"}</span>
-                </div>
-                <div className="pl-6">
-                  <span className="text-[6px] text-orange-300 font-mono">Hello!</span>
-                </div>
-                <div className="pl-4">
-                  <span className="text-[6px] text-green-300 font-mono">{"</Text>"}</span>
-                </div>
-                <div className="pl-2">
-                  <span className="text-[6px] text-green-300 font-mono">{"</View>"}</span>
-                </div>
-                {/* Terminal output */}
-                <div className="mt-2 pt-2 border-t border-purple-500/30">
-                  <div className="text-[5px] text-green-400 font-mono">$ npm start</div>
-                  <div className="text-[5px] text-purple-300 font-mono">✓ Building...</div>
-                  <div className="text-[5px] text-green-400 font-mono animate-pulse">● Running</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
       </div>
 
       <button

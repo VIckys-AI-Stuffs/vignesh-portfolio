@@ -1,71 +1,55 @@
-
 import React from "react";
+import { Smartphone, Layers, Server, Database, Cloud, GitBranch, Workflow } from "lucide-react";
+import Reveal from "./ui/Reveal";
+import TiltCard from "./ui/TiltCard";
 
 interface SkillCategory {
   title: string;
+  icon: React.ReactNode;
   skills: string[];
 }
 
 const Skills: React.FC = () => {
   const skillCategories: SkillCategory[] = [
-    {
-      title: "Mobile Development",
-      skills: ["React Native", "React", "TypeScript", "JavaScript", "Native Android", "Xamarin"]
-    },
-    {
-      title: "State Management",
-      skills: ["Redux", "Context API"]
-    },
-    {
-      title: "Backend / Frameworks",
-      skills: ["Java", "Hibernate", "Jersey API", "C#", ".NET", "MVC"]
-    },
-    {
-      title: "Database",
-      skills: ["PostgreSQL", "MS-SQL"]
-    },
-    {
-      title: "Cloud Services",
-      skills: ["Firebase", "AWS (EC2, S3, Route53)", "Azure"]
-    },
-    {
-      title: "Version Control & CI/CD",
-      skills: ["Git", "GitHub", "Jenkins", "Azure DevOps"]
-    },
-    {
-      title: "Development Methodologies",
-      skills: ["Agile", "Scrum"]
-    }
+    { title: "Mobile Development", icon: <Smartphone className="w-5 h-5" />, skills: ["React Native", "React", "TypeScript", "JavaScript", "Native Android", "Xamarin"] },
+    { title: "State Management", icon: <Layers className="w-5 h-5" />, skills: ["Redux", "Context API"] },
+    { title: "Backend / Frameworks", icon: <Server className="w-5 h-5" />, skills: ["Java", "Hibernate", "Jersey API", "C#", ".NET", "MVC"] },
+    { title: "Database", icon: <Database className="w-5 h-5" />, skills: ["PostgreSQL", "MS-SQL"] },
+    { title: "Cloud Services", icon: <Cloud className="w-5 h-5" />, skills: ["Firebase", "AWS (EC2, S3, Route53)", "Azure"] },
+    { title: "Version Control & CI/CD", icon: <GitBranch className="w-5 h-5" />, skills: ["Git", "GitHub", "Jenkins", "Azure DevOps"] },
+    { title: "Development Methodologies", icon: <Workflow className="w-5 h-5" />, skills: ["Agile", "Scrum"] },
   ];
 
   return (
-    <section id="skills" className="bg-portfolio-dark relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-hero-pattern opacity-10"></div>
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full bg-portfolio-secondary/5 blur-3xl"></div>
-      </div>
-      
+    <section id="skills" className="bg-transparent relative overflow-hidden">
       <div className="section-container">
-        <h2 className="section-title">Skills & Expertise</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Reveal>
+          <h2 className="section-title">Skills &amp; <span className="gradient-text">expertise</span></h2>
+          <p className="text-portfolio-muted max-w-2xl mt-2">
+            A full-stack toolkit honed across fintech, healthcare and enterprise mobility.
+          </p>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
           {skillCategories.map((category, index) => (
-            <div 
-              key={index} 
-              className="glass-card p-6 rounded-lg hover:border-portfolio-secondary/30 transition-all duration-300"
-            >
-              <h3 className="text-xl font-medium mb-4 text-portfolio-light">
-                {category.title}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <span key={skillIndex} className="skill-tag">
-                    {skill}
-                  </span>
-                ))}
+            <Reveal key={category.title} delay={index * 0.06}>
+              <TiltCard className="h-full">
+              <div className="panel rounded-2xl p-6 h-full group">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center text-portfolio-secondary transition-colors group-hover:text-white"
+                    style={{ background: "rgba(125,93,255,0.12)", border: "1px solid rgba(125,93,255,0.25)" }}>
+                    {category.icon}
+                  </div>
+                  <h3 className="text-lg font-medium text-portfolio-light">{category.title}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span key={skill} className="skill-tag">{skill}</span>
+                  ))}
+                </div>
               </div>
-            </div>
+              </TiltCard>
+            </Reveal>
           ))}
         </div>
       </div>

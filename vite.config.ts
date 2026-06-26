@@ -5,7 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/vignesh-portfolio/",
+  // Netlify serves at root ("/"); GitHub Pages serves under the repo subpath.
+  // Build for Netlify with DEPLOY_TARGET=netlify; default keeps gh-pages working.
+  base: process.env.DEPLOY_TARGET === "netlify" ? "/" : "/vignesh-portfolio/",
   server: {
     host: "::",
     port: 8080,

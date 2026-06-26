@@ -34,9 +34,11 @@ const Header: React.FC = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const lenis = (window as unknown as { __lenis?: { scrollTo: (t: string, o?: object) => void } }).__lenis;
+    if (lenis) {
+      lenis.scrollTo(`#${sectionId}`, { offset: -70 });
+    } else {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
   };
@@ -45,7 +47,7 @@ const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-portfolio-primary bg-opacity-80 shadow-lg py-3 backdrop-blur-sm border-b border-portfolio-secondary/20"
+          ? "bg-[#08070f]/75 shadow-lg py-3 backdrop-blur-xl border-b border-white/10"
           : "bg-transparent py-6"
       }`}
     >
@@ -56,7 +58,7 @@ const Header: React.FC = () => {
             className="text-xl md:text-2xl font-bold text-portfolio-light group"
           >
             <span className="group-hover:text-portfolio-secondary transition-colors">Vigneshwaran</span>
-            <span className="text-portfolio-secondary"> M</span>
+            <span className="gradient-text"> M</span>
           </button>
         </div>
 
